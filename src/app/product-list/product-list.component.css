@@ -1,0 +1,27 @@
+/* Styling for the circular green button */
+button.circle-btn {
+    background-color: #28a745;  /* Green background */
+    color: white;               /* White text */
+    border: none;               /* Remove border */
+    width: 100px;               /* Set a fixed width */
+    height: 100px;              /* Set a fixed height */
+    border-radius: 50%;         /* Make it circular */
+    display: flex;              /* Use flexbox to center the content */
+    justify-content: center;    /* Center the text horizontally */
+    align-items: center;        /* Center the text vertically */
+    font-size: 18px;            /* Set the font size */
+    cursor: pointer;           /* Change cursor on hover */
+    transition: all 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the button */
+button.circle-btn:hover {
+    background-color: #218838;  /* Darker green on hover */
+    transform: scale(1.1);       /* Slightly increase size on hover */
+}
+
+/* Focus effect (when the button is clicked or in focus) */
+button.circle-btn:focus {
+    outline: none;              /* Remove the default focus outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);  /* Blue focus outline */
+}

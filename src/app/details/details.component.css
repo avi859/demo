@@ -1,0 +1,93 @@
+/* Main card styling */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Rounded corners for a softer look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Hover effect on card */
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Darker shadow for a lifted effect */
+    transform: translateY(-4px); /* Slight lift when hovered */
+}
+
+/* Card body styling */
+.card-body {
+    padding: 15px;
+    font-family: 'Arial', sans-serif; /* Clean font for better readability */
+}
+
+/* User details box inside the card */
+.user-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 20px;
+    border-left: 8px solid #28a745; /* Bold green left border */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect on user details */
+.user-box:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+    transform: translateX(4px); /* Slight horizontal move on hover */
+}
+
+/* User name styling */
+.user-box .user-name {
+    margin-top: 10px;
+    font-size: 20px; /* Slightly larger font */
+    font-weight: 700; /* Bold for emphasis */
+    color: #333;
+    text-transform: uppercase; /* Make the name stand out */
+}
+
+/* Styling for the product name, ID, and address */
+.user-box p {
+    font-size: 15px; /* Slightly larger for readability */
+    color: #555;
+    margin: 8px 0;
+    line-height: 1.6; /* Better spacing between lines */
+}
+
+/* Green color for the ID */
+.text-success {
+    color: #28a745;
+    font-weight: 600;
+}
+
+/* Button styling */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold; /* Bold button text */
+    border-radius: 8px; /* Rounded corners */
+    text-transform: uppercase; /* Make the text uppercase */
+    transition: background-color 0.3s, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Add subtle shadow to button */
+}
+
+/* Button hover effect */
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    transform: translateY(-2px); /* Button lifts up slightly when hovered */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Focus effect for the button (on click or tabbing) */
+.btn-success:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.5); /* Greenish outline on focus */
+}
+
+.col-md-2 {
+    margin-bottom: 20px;
+}

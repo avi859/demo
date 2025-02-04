@@ -1,0 +1,417 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    height: 100vh;
+    transition: background-color 2s ease; /* Smooth transition for background color */
+  }
+  
+  /* Dynamic Background Color Animation */
+  @keyframes dynamicBackground {
+    0% {
+      background-color: #f9fafb; /* Light gray */
+    }
+    50% {
+      background-color: #cdf8fd; /* Light cyan */
+    }
+    100% {
+      background-color: #f9fafb; /* Light gray again */
+    }
+  }
+  
+  body {
+    animation: dynamicBackground 10s infinite alternate; /* Background will transition every 10s */
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    height: 80vh; /* Reduced height for hero section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .hero-section .overlay {
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay for text readability */
+    padding: 20px;
+    max-width: 900px; /* Reduced max-width for compact layout */
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Falling Animation for "Angular" Text */
+  .falling-text {
+    font-size: 5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .falling-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-100px);
+    animation: fallDown 2s ease-out forwards;
+  }
+  
+  .falling-text span:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  .falling-text span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .falling-text span:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  
+  .falling-text span:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  
+  .falling-text span:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  
+  .falling-text span:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+  
+  .falling-text span:nth-child(7) {
+    animation-delay: 0.7s;
+  }
+  
+  .falling-text span:nth-child(8) {
+    animation-delay: 0.8s;
+  }
+  
+  .falling-text span:nth-child(9) {
+    animation-delay: 0.9s;
+  }
+  
+  /* Animation for falling letters */
+  @keyframes fallDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(20px);
+    }
+    80% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Dynamic Fade-in Text (Description) */
+  .dynamic-text {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Features Section */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+    margin-top: -40px; /* Added margin top to reduce gap */
+  }
+  
+  /* Feature Blocks Styling */
+  .feature {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: featureFallDown 1s ease-out forwards;
+  }
+  
+  .feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature .icon {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #34d399;
+  }
+  
+  .feature h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .feature p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Animation for falling feature blocks */
+  @keyframes featureFallDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Apply delays for each feature */
+  #create {
+    animation-delay: 0.5s; /* Delay for Create block */
+  }
+  
+  #read {
+    animation-delay: 1s; /* Delay for Read block */
+  }
+  
+  #update {
+    animation-delay: 1.5s; /* Delay for Update block */
+  }
+  
+  #delete {
+    animation-delay: 2s; /* Delay for Delete block */
+  }
+  
+  /* Call-to-Action Section */
+  .cta-section {
+    background-color: #fff;
+    color: #333;
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 40px auto;
+    border: 2px solid #1e3a8a;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cta-section p {
+    font-size: 1.6em;
+    margin-bottom: 30px;
+  }
+  
+  .cta-button {
+    background-color: #34d399;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #10b981;
+  }
+  
+  /* Footer Section */
+  .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 1.2em;
+  }
+  
+  .footer p {
+    font-size: 1em;
+    margin-top: 10px;
+  }
+  
+  /* Responsive Design (Mobile) */
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 3em;
+    }
+  
+    .hero-section p {
+      font-size: 1.2em;
+    }
+  
+    .cta-button {
+      font-size: 1.1em;
+    }
+  
+    .features {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+  
+    .cta-section p {
+      font-size: 1.3em;
+    }
+  }
+  
+  /* Larger Screens (Desktop) */
+  @media (min-width: 1200px) {
+    .hero-section h1 {
+      font-size: 5em;
+    }
+  
+    .hero-section p {
+      font-size: 1.8em;
+    }
+  
+    .cta-button {
+      font-size: 1.4em;
+    }
+  
+    .features {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    .cta-section p {
+      font-size: 1.6em;
+    }
+  
+    .footer {
+      font-size: 1.3em;
+    }
+  }
+
+
+  /* Add to your existing CSS */
+
+/* Boy animation and greeting styles */
+.boy-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  opacity: 0;
+  animation: boyEnter 3s ease-out forwards;
+}
+
+.boy-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.boy-image {
+  width: 150px; /* Adjust the size of the boy image */
+  animation: boyWave 2s ease-in-out infinite;
+}
+
+.boy-greeting {
+  font-size: 1.6em;
+  margin-top: 20px;
+  color: #333;
+  opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
+  animation-delay: 2s; /* Delay for text */
+}
+
+/* Boy entering animation */
+@keyframes boyEnter {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Boy waving animation */
+@keyframes boyWave {
+  0% {
+      transform: rotate(0deg);
+  }
+  25% {
+      transform: rotate(10deg);
+  }
+  50% {
+      transform: rotate(-10deg);
+  }
+  75% {
+      transform: rotate(10deg);
+  }
+  100% {
+      transform: rotate(0deg);
+  }
+}
+
+/* Fade-in effect for the greeting text */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/* Styling for the boy gif */
+.boy-gif {
+  width: 150px; /* Adjust the size */
+  height: auto;
+  border-radius: 10px; /* Optional: add rounded corners for the GIF */
+  margin-bottom: 10px; /* Optional: spacing below GIF */
+}
+
+  

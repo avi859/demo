@@ -1,0 +1,39 @@
+<div class="page-area">
+    <h2 class="product-heading">Our Products</h2> 
+    <p class="product-description"><strong>We offer a variety of innovative products designed to meet
+      the needs of businesses and individuals.</strong></p>
+    <hr class="mb-3">
+  
+    <div class="add-product-container">
+        <div class="input-group">
+            <input type="text" [(ngModel)]="newProduct.name" placeholder="Enter product name" 
+                   class="product-input" [class.required]="!newProduct.name && name?.touched" #name="ngModel"/>
+            <span *ngIf="!newProduct.name && name?.touched" class="required">*</span>
+        </div>
+        <div class="input-group">
+            <input type="text" [(ngModel)]="newProduct.description" placeholder="Enter product description" 
+                   class="product-input" [class.required]="!newProduct.description && description?.touched" #description="ngModel"/>
+            <span *ngIf="!newProduct.description && description?.touched" class="required">*</span>
+        </div>
+        <div class="input-group">
+            <input type="url" [(ngModel)]="newProduct.imageUrl" placeholder="Enter product image URL" 
+                   class="product-input" [class.required]="!newProduct.imageUrl && image?.touched" #image="ngModel"/>
+            <span *ngIf="!newProduct.imageUrl && image?.touched" class="required">*</span>
+        </div>
+        <button (click)="addProduct()" class="btn" [disabled]="!isFormValid()">{{editMode ? 'Update' : 'Add Product'}}</button>&nbsp;
+    </div>
+  
+    <div class="product-container">
+        <div class="card" *ngFor="let product of products; let i = index">
+            <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.name }}" style="width: 100%; height: 200px; object-fit: contain;">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <a routerLink="{{ product.name.toLowerCase() }}" class="btn">Know More</a>
+                <button (click)="deleteProduct(i)" class="delete-product-btn">Delete</button>&nbsp;
+                <button (click)="editProduct(i)" class="delete-product-btn">Edit</button>
+            </div>
+        </div>
+    </div>                     
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,55 @@
+<div class="col-md-6 text-left bg-white rounded shadow py-3 mt-5 ml-5">
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+ 
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" name="username" class="form-control"
+             id="username" placeholder="Enter Username" formControlName="username">
+      <small class="text-danger" *ngIf="studentForm.get('username')?.invalid && studentForm.get('username')?.touched">
+        <!-- <span class= "text-danger" *ngIf="studentForm.get('username')?.errors?.['required']">Username is not valid</span> -->
+      </small>
+    </div>
+ 
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" name="email" class="form-control"
+      id="email" placeholder="Enter Email" formControlName="email">
+       <!-- <small class="text-danger" *ngIf="studentForm.get('email')?.invalid && studentForm.get('email')?.touched">
+        Please enter a valid email
+       </small> -->
+    </div>
+ 
+    <div class="mb-3 form-check">
+      <label for="course" class="form-label">Select Course</label>
+      <select class="form-control" id="course" name="course" formControlName="selectCourse"  [ngModel]="defaultCourse">
+        <option value="Angular">Angular</option>
+        <option value="Html">Html</option>
+        <option value="CSS">CSS</option>
+        <option value="Javascript">Javascript</option>
+        <option value="jQuery">jQuery</option>
+      </select>
+    </div>
+    
+    <div class="mb-3" formArrayName="skills">
+      <label for="skills" class="form-label">Skills</label>
+      <ng-container *ngFor="let skill of skills.controls; index as i">
+        <input type="text" class="form-control mt-2" formControlName="{{i}}" placeholder="Add Skill">
+      </ng-container>
+      <button type="button" class="btn btn-light btn-sm mt-3 btn-add" (click)="addSkill()">
+        <i>+</i> Add Skill
+      </button>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" (click)="onSave()">Submit</button>
+  </form>
+</div>
+
+<div class="row justify-content-center" *ngIf="submitted">
+  <div class="col-md-6 bg-white rounded shadow py-3 mt-2">
+    <h2>Form Data</h2>
+    <p>Username: <strong class="text-success">{{formValue.username}}</strong></p>
+    <p> Email: <strong class="text-success">{{formValue.email}}</strong></p>
+    <p>Course: <strong class="text-success">{{formValue.selectCourse}}</strong></p>
+    <p>Skills: <strong class="text-success">{{formValue.skills}}</strong></p>
+  </div>
+</div>

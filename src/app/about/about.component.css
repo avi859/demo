@@ -1,0 +1,304 @@
+/* Base Styles for Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f9fafb;
+    transition: background-color 2s ease;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    background: linear-gradient(135deg, #1e3a8a, #34d399); /* Deep blue to light teal gradient */
+    height: 60vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    animation: heroAnimation 5s ease-in-out infinite alternate;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Adding rounded corners */
+}
+
+.hero-section .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section h1 {
+    font-size: 5em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: textSlideIn 1.5s ease-out forwards;
+}
+
+.hero-section p {
+    font-size: 1.6em;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+/* Team Section */
+.team {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #e0f7fa;
+    animation: fadeInUp 2s ease-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Rounded corners for this section */
+}
+
+.team h2 {
+    font-size: 3.5em;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+    animation: textSlideIn 1.5s ease-out forwards;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.team-member {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    transform: translateY(0);
+    animation: cardAppear 1.5s ease-out forwards;
+}
+
+.team-member:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.team-info {
+    opacity: 0;
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+.team-info h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.team-info p {
+    font-size: 1.2em;
+    color: #666;
+    font-weight: normal;
+}
+
+/* Mission & Vision Section */
+.mission {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    animation: fadeInUp 2s ease-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Rounded corners for this section */
+}
+
+.mission h2 {
+    font-size: 3.5em;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.mission p {
+    font-size: 1.4em;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Call to Action Section */
+.cta-section {
+    padding: 60px 20px;
+    text-align: center;
+    color: black;
+    animation: fadeInUp 2s ease-out;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-section p {
+    font-size: 1.6em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #ffffff;
+    color: #34d399;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #ffffff;
+    color: #1e3a8a;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Section */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 1.2em;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    animation: footerAnimation 3s ease-in-out infinite alternate;
+}
+
+.footer p {
+    font-size: 1em;
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+    padding: 10px 0;
+}
+
+/* Add a gradient background animation for the footer */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff6347, #34d399);
+    opacity: 0.2;
+    animation: gradientAnimation 3s ease-in-out infinite;
+    z-index: 0;
+}
+
+/* Hover effect on footer */
+.footer:hover {
+    box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animation for text inside footer */
+@keyframes footerAnimation {
+    0% {
+        opacity: 0.7;
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for gradient background */
+@keyframes gradientAnimation {
+    0% {
+        background: linear-gradient(45deg, #ff6347, #34d399);
+    }
+    50% {
+        background: linear-gradient(45deg, #34d399, #1e3a8a);
+    }
+    100% {
+        background: linear-gradient(45deg, #ff6347, #34d399);
+    }
+}
+
+/* Footer Hover Effects for Interactive Feel */
+.footer p:hover {
+    color: #ff6347;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Animations */
+@keyframes heroAnimation {
+    0% {
+        background-color: #1e3a8a;
+    }
+    50% {
+        background-color: #34d399;
+    }
+    100% {
+        background-color: #1e3a8a;
+    }
+}
+
+@keyframes textSlideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardAppear {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

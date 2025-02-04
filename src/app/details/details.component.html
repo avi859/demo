@@ -1,0 +1,26 @@
+<div class="col-md-2">
+    <button class="btn btn-success" (click)="getAllUser()">
+      {{ isListVisible ? 'Hide Users' : 'Get Users' }}
+    </button>
+</div>
+  
+  <div class="card" *ngIf="isListVisible">
+    <div class="card-body text-left">  
+      <ng-container *ngIf="noDataFound; else userListTemplate">
+        <p>No Data Found</p> 
+      </ng-container>
+  
+     
+      <ng-template #userListTemplate>
+        <ng-container *ngFor="let product of userList">
+          <div>
+            <p class="user-name">User name: <strong style="color: #00bcd4;">{{ product.name }}</strong></p>
+            <p>User Id: <strong class="text-success">{{ product.id }}</strong></p>
+            <p>Address: <strong>{{ truncateAddress(product.address.street) }}</strong></p>
+            <hr><hr>
+          </div>
+        </ng-container>
+      </ng-template>
+    </div>
+  </div>
+  

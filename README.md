@@ -149,3 +149,14 @@ https://images.unsplash.com/photo-1623621461302-e6b5236629cb?w=500&auto=format&f
 
 https://images.unsplash.com/photo-1648806030599-c963fd14a22f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aSUyMHBhZHxlbnwwfHwwfHx8MA%3D%3D
 
+# snacks:-
+
+https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c25hY2tzfGVufDB8fDB8fHww
+
+# cycle:-
+
+https://images.unsplash.com/photo-1583467875263-d50dec37a88c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3ljbGV8ZW58MHx8MHx8fDA%3D
+
+# Motorcycle:-
+
+https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW90b3JjeWNsZXxlbnwwfHwwfHx8MA%3D%3D

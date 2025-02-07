@@ -25,7 +25,12 @@
 
     <!-- Total Product Count -->
     <div class="total-products">
-        <h4>Total Products in Cart: {{ getTotalProductCount() }}</h4>
+        <h4 (click)="totalpro()">Total Products in Cart: {{ getTotalProductCount() }}</h4>
+    </div>
+
+     <!-- Dynamic Alert -->
+     <div class="alert" *ngIf="showAlert">
+        {{ alertMessage }}
     </div>
 
     <div class="product-container">

@@ -17,6 +17,9 @@ export class ProductsComponent implements OnInit {
   editMode: boolean = false;
   editIndex!: number;
 
+  alertMessage: string = ''; 
+  showAlert: boolean = false;  
+
   products: Array<any> = this.loadFromLocalStorage();
 
   defaultProducts = [
@@ -104,5 +107,15 @@ export class ProductsComponent implements OnInit {
 
   getTotalProductCount(): number {
     return this.products.length;
+  }
+
+  totalpro() {
+    this.alertMessage = `Total Products added in the cart is: ${this.products.length}`;
+    this.showAlert = true;
+
+    // Automatically hide the alert after 3 seconds
+    setTimeout(() => {
+      this.showAlert = false;
+    }, 3000);
   }
 }

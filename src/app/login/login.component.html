@@ -1,64 +1,79 @@
-<!-- <body>
-    <div class="login-container">
-        <h2>Sign In</h2>
-        <form action="#" method="post">
-            <div class="input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email">
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required placeholder="Enter your password">
-            </div>
-            <div class="remember-me">
-                <input type="checkbox" id="remember" name="remember">
-                <label for="remember">Remember Me</label>
-            </div>
-            <button type="submit"  class="signin-btn" routerLink="welcome">Sign In</button>
-        </form>
-        <div class="links">
-            <a href="#">Forgot Password?</a>
-            <a href="#">Create an Account</a>
-        </div>
-    </div>
-</body> -->
 <div class="col-md-6 text-left bg-white rounded shadow py-3 mt-5 ml-5">
-    <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+  <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
    
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Username*</label>
-        <input type="username" name = "username" class="form-control"
-         id="username" placeholder="Enter Username" ngModel required #name="ngModel">
-         <small class="text-danger" *ngIf="!name.valid && name.touched" style="color: red;">Please Enter Username</small>
-         <!-- <button class="btn-primary btn-sm mt-2">Set Username</button> -->
-      </div>
-   
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Email*</label>
-        <input type="email" name="email"class="form-control"             
-        id="email" placeholder="Enter Email" ngModel required email #email="ngModel">
-        <small class="text-danger" *ngIf="!email.valid && email.touched"style="color: red;" >Please Enter Valid Email</small>
-      </div>
-   
-      <div class="mb-3 form-check">
-        <label for="course" class="form-label">Select Course</label>
-        <select class="form-control" id="course" name="course" [ngModel]="defaultCourse">
-          <option value="Angular">Angular</option>
-          <option value="Html">Html</option>
-          <option value="CSS">CSS</option>
-          <option value="Javascript">Javascript</option>
-          <option value="jQuery">jQuery</option>
-        </select>
-      </div>
-   
-      <button type="submit"  class="btn btn-primary">Submit</button>
-    </form>
-  </div>
-  <div class="row justify-content-center" *ngIf="submitted">
-    <div class="col-md-6 bg-white rounded shadow py-3 mt-2">
-      <h1>Form Data</h1>
-      <p>Username: <strong style="color: green;">{{formData.username}}</strong></p>
-       <p>Email: <strong style="color: green;">{{formData.email}}</strong></p>
-      <p>Course: <strong style="color: green;">{{formData.course}}</strong></p>
+    <!-- Username -->
+    <div class="mb-3">
+      <label for="username" class="form-label">Username*</label>
+      <input type="text" name="username" class="form-control" id="username" placeholder="Enter Username" ngModel required #username="ngModel">
+      <small class="text-danger" *ngIf="!username.valid && username.touched">Please Enter Username</small>
     </div>
+   
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email*</label>
+      <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email" ngModel required email #email="ngModel">
+      <small class="text-danger" *ngIf="!email.valid && email.touched">Please Enter Valid Email</small>
+    </div>
+   
+    <!-- Date of Birth -->
+    <div class="mb-3">
+      <label for="dob" class="form-label">Date of Birth*</label>
+      <input type="date" name="dob" class="form-control" id="dob" ngModel required #dob="ngModel">
+      <small class="text-danger" *ngIf="!dob.valid && dob.touched">Please Enter Date of Birth</small>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone Number*</label>
+      <input type="tel" name="phone" class="form-control" id="phone" placeholder="Enter Phone Number" ngModel required pattern="^[0-9]{10}$" #phone="ngModel">
+      <small class="text-danger" *ngIf="!phone.valid && phone.touched">Please Enter Valid Phone Number</small>
+    </div>
+
+    <!-- Location -->
+    <div class="mb-3">
+      <label for="location" class="form-label">Location*</label>
+      <input type="text" name="location" class="form-control" id="location" placeholder="Enter Location" ngModel required #location="ngModel">
+      <small class="text-danger" *ngIf="!location.valid && location.touched">Please Enter Location</small>
+    </div>
+
+    <!-- Gender -->
+    <div class="mb-3">
+      <label for="gender" class="form-label">Gender*</label>
+      <div>
+        <input type="radio" id="male" name="gender" value="Male" ngModel required #gender="ngModel">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female" ngModel required #gender="ngModel">
+        <label for="female">Female</label>
+        <small class="text-danger" *ngIf="!gender.valid && gender.touched">Please Select Gender</small>
+      </div>
+    </div>
+    &nbsp;
+    
+    <!-- Select Course -->
+    <div class="mb-3">
+      <label for="course" class="form-label">Select Course</label>
+      <select class="form-control" id="course" name="course" [ngModel]="defaultCourse">
+        <option value="Angular">Angular</option>
+        <option value="Html">Html</option>
+        <option value="CSS">CSS</option>
+        <option value="Javascript">Javascript</option>
+        <option value="jQuery">jQuery</option>
+      </select>
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<div class="row justify-content-center" *ngIf="submitted">
+  <div class="col-md-6 bg-white rounded shadow py-3 mt-2">
+    <h1>Form Data</h1>
+    <p>Username: <strong style="color: green;">{{formData.username}}</strong></p>
+    <p>Email: <strong style="color: green;">{{formData.email}}</strong></p>
+    <p>Course: <strong style="color: green;">{{formData.course}}</strong></p>
+    <p>Date of Birth: <strong style="color: green;">{{formData.dob}}</strong></p>
+    <p>Phone: <strong style="color: green;">{{formData.phone}}</strong></p>
+    <p>Location: <strong style="color: green;">{{formData.location}}</strong></p>
+    <p>Gender: <strong style="color: green;">{{formData.gender}}</strong></p>
   </div>
+</div>

@@ -17,10 +17,8 @@ export class ProductsComponent implements OnInit {
   editMode: boolean = false;
   editIndex!: number;
 
-  // Initialize products and check if there's data in local storage
   products: Array<any> = this.loadFromLocalStorage();
 
-  // Initial product list (this should only be used if no local storage data is found)
   defaultProducts = [
     { name: 'Laptop', description: 'High-performance laptops for all your computing needs.', imageUrl: 'https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wfGVufDB8fDB8fHww' },
     { name: 'Mobile', description: 'Latest smartphones with cutting-edge features.', imageUrl: 'https://plus.unsplash.com/premium_photo-1680985551022-ad298e8a5f82?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bW9iaWxlfGVufDB8fDB8fHww' },
@@ -28,7 +26,6 @@ export class ProductsComponent implements OnInit {
     { name: 'WashingMachine', description: 'Efficient washing machines to make laundry easier.', imageUrl: 'https://plus.unsplash.com/premium_photo-1664372899366-d5fb20b332d1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8V2FzaGluZyUyME1hY2hpbmV8ZW58MHx8MHx8fDA%3D' }
   ];
 
-  // Product data for the new product
   newProduct = {
     name: '',
     description: '',
@@ -36,34 +33,27 @@ export class ProductsComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    // If local storage has no products, initialize it with default data
     if (this.products.length === 0) {
       this.products = this.defaultProducts;
       this.saveToLocalStorage(); // Save to local storage after initializing
     }
   }
 
-  // Method to add a new product
   addProduct() {
     if (this.editMode) {
-      // Update product at editIndex
       this.products[this.editIndex] = { ...this.newProduct };
-
-      // Reset the form fields after editing
       this.newProduct = { name: '', description: '', imageUrl: '' };
-      this.editMode = false; // Reset the editMode to false after saving
+      this.editMode = false;
     } else {
       if (this.newProduct.name && this.newProduct.description && this.newProduct.imageUrl) {
         this.products.push({ ...this.newProduct });
-        this.newProduct = { name: '', description: '', imageUrl: '' }; // Clear input fields
+        this.newProduct = { name: '', description: '', imageUrl: '' };
       }
     }
 
-    // Save products to local storage after every change
     this.saveToLocalStorage();
   }
 
-  // Method to delete a product
   deleteProduct(index: number) {
     const proName = this.products[index].name;
     if (confirm('Are you sure? You want to delete this product. ' + proName + '?')) {
@@ -72,11 +62,9 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-  // Method to edit an existing product
   editProduct(index: number) {
     this.editMode = true;
     this.editIndex = index;
-    console.log(this.products[index]);
 
     if (this.name?.nativeElement) {
       this.name.nativeElement.value = this.products[index].name;
@@ -91,12 +79,10 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-  // Save the current products array to localStorage
   saveToLocalStorage() {
     localStorage.setItem('products', JSON.stringify(this.products));
   }
 
-  // Load products from localStorage with a fallback to an empty array if no data exists
   loadFromLocalStorage(): Array<any> {
     try {
       const storedProducts = localStorage.getItem('products');
@@ -112,8 +98,11 @@ export class ProductsComponent implements OnInit {
     return [];
   }
 
-  // Check if all required fields are filled
   isFormValid(): boolean {
     return this.newProduct.name !== '' && this.newProduct.description !== '' && this.newProduct.imageUrl !== '';
+  }
+
+  getTotalProductCount(): number {
+    return this.products.length;
   }
 }

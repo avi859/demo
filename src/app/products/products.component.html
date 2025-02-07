@@ -1,9 +1,9 @@
 <div class="page-area">
-    <h2 class="product-heading">Our Products</h2> 
+    <h2 class="product-heading">Our Products</h2>
     <p class="product-description"><strong>We offer a variety of innovative products designed to meet
       the needs of businesses and individuals.</strong></p>
     <hr class="mb-3">
-  
+
     <div class="add-product-container">
         <div class="input-group">
             <input type="text" [(ngModel)]="newProduct.name" placeholder="Enter product name" 
@@ -22,10 +22,15 @@
         </div>
         <button (click)="addProduct()" class="btn" [disabled]="!isFormValid()">{{editMode ? 'Update' : 'Add Product'}}</button>&nbsp;
     </div>
-  
+
+    <!-- Total Product Count -->
+    <div class="total-products">
+        <h4>Total Products in Cart: {{ getTotalProductCount() }}</h4>
+    </div>
+
     <div class="product-container">
         <div class="card" *ngFor="let product of products; let i = index">
-            <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.name }}" style="width: 100%; height: 200px; object-fit: contain;">
+            <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.name }}">
             <div class="card-body">
                 <h5 class="card-title">{{ product.name }}</h5>
                 <p class="card-text">{{ product.description }}</p>
@@ -34,6 +39,6 @@
                 <button (click)="editProduct(i)" class="delete-product-btn">Edit</button>
             </div>
         </div>
-    </div>                     
+    </div>
 </div>
 <router-outlet></router-outlet>

@@ -1,199 +1,228 @@
-/* General styling for the page */
-.page-area {
-    padding: 40px;
-    background-color: #f9f9f9;
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Overall page styling */
+  .page-area {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #f6d365 0%, #695954 100%);
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Heading and description */
+  .product-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
     text-align: center;
-}
-
-/* Styling for the heading (h2) with animation and hover effect */
-.product-heading {
-    font-size: 36px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    transition: color 0.4s ease, transform 0.3s ease;
-}
-
-/* Hover effect for heading */
-.product-heading:hover {
-    color: #00bcd4; /* Teal color */
-    transform: scale(1.1); /* Slightly enlarge the text */
-    text-shadow: 2px 2px 10px rgba(0, 188, 212, 0.5); /* Adding shadow for glowing effect */
-}
-
-/* Scroll animation for heading */
-.product-heading {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1s ease-out forwards;
-    animation-delay: 0.2s; /* Delay to make it come after the paragraph */
-}
-
-/* Scroll animation keyframes */
-@keyframes fadeInUp {
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Styling for the paragraph */
-.product-description {
-    font-size: 18px;
-    color: #666;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .product-description {
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
     margin-bottom: 30px;
-    line-height: 1.6;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-/* Adding animation delay for paragraph */
-.product-description {
-    animation-delay: 0.5s; /* Delayed start */
-}
-
-/* Subtle glow effect on hover for paragraph */
-.product-description:hover {
-    color: #333;
-    text-shadow: 0 2px 5px rgba(0, 188, 212, 0.5); /* Light glowing effect */
-    cursor: pointer;
-}
-
-/* Add smooth transition for paragraph hover effect */
-.product-description {
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-/* Styling for the add-product-container to keep inputs in a row */
-.add-product-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;  /* Space between the input boxes */
-    margin-bottom: 20px;
-}
-
-/* Styling for each input group (to contain input and asterisk side by side) */
-.input-group {
-    display: flex;
-    align-items: center;
-}
-
-/* Styling for required asterisk */
-.required {
+  }
+  
+  /* Input Fields Styling */
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .product-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    margin-top: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .product-input:focus {
+    border-color: #ff6f61;
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
+  }
+  
+  .product-input.required {
+    border-color: red;
+  }
+  
+  /* Required input field indicator */
+  .required {
     color: red;
-    margin-left: 5px;
-    font-weight: bold;
-}
-
-/* Styling for inputs when they are empty (red border) */
-.product-input.ng-touched.ng-invalid {
-    border: 2px solid red;
-}
-
-/* Styling for the input fields */
-.product-input {
-    margin: 5px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 250px;
-}
-
-/* Button styles */
-.btn {
-    background-color: #28a745;
-    color: white;
-    border-radius: 5px;
-    padding: 5px 9px;
-    text-decoration: none;
-}
-
-/* Hover effect for buttons */
-.btn:hover {
-    background-color: #218838;
-}
-
-/* Styling for delete button */
-.delete-product-btn {
-    background-color: #dc3545;
-    color: white;
-    border-radius: 5px;
-    padding: 5px 10px;
+    font-size: 1.2rem;
+  }
+  
+  /* Button Styling */
+  .btn {
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 12px 30px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-}
-
-/* Hover effect for delete button */
-.delete-product-btn:hover {
-    background-color: #c82333;
-}
-
-/* Styling for the product container (display products in grid layout) */
-.product-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn:disabled {
+    background-color: rgb(70, 149, 202);
+    cursor: not-allowed;
+  }
+  
+  .btn:hover {
+    background-color: #268cc7;
+    transform: translateY(-3px);
+  }
+  
+  .delete-product-btn {
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .delete-product-btn:hover {
+    background-color: #c9302c;
+    transform: translateY(-3px);
+  }
+  
+  /* Product Container Styling */
+  .product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    margin-top: 10px;
-}
-
-/* Styling for individual product card */
-.card {
-    width: 22%;
+    margin-top: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-/* Hover effect for product cards */
-.card:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Styling for product image inside card */
-.card-img-top {
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img-top {
     width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-}
-
-/* Styling for card body (where text content is) */
-.card-body {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover .card-img-top {
+    transform: scale(1.1);
+  }
+  
+  .card-body {
     padding: 20px;
-    background-color: #fff;
-}
-
-/* Styling for card title */
-.card-title {
-    font-size: 20px;
-    font-weight: 600;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
     color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #777;
     margin-bottom: 15px;
-}
-
-/* Styling for card text (description) */
-.card-text {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-/* Responsive design for smaller screens */
-@media (max-width: 991px) {
-    .card {
-        width: 45%;
+  }
+  
+  .card .btn {
+    background-color: #5bc0de;
+    font-size: 1rem;
+    padding: 8px 20px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .card .btn:hover {
+    background-color: #31b0d5;
+  }
+  
+  .total-products {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #8d5955;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 30px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(20px);
+    animation: slideIn 1s ease-out;
+  }
+  
+  .total-products:hover {
+    background-color: #e95c4f;
+    cursor: pointer;
+  }
+  
+  /* Animation for Total Products Count */
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
     }
-}
-
-@media (max-width: 767px) {
-    .card {
-        width: 100%;
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
-}
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .page-area {
+      padding: 15px;
+    }
+  
+    .product-container {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .product-heading {
+      font-size: 2rem;
+    }
+  
+    .btn {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  
+    .card-title {
+      font-size: 1.25rem;
+    }
+  
+    .card-text {
+      font-size: 0.9rem;
+    }
+  
+    .total-products {
+      font-size: 1.2rem;
+    }
+  }
+  

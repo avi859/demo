@@ -6,6 +6,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormSubmitResponse } from '../models/form-submit-response.model';  // Import the response interface
 
+
 @Component({
   selector: 'app-login',
   imports: [FormsModule, CommonModule],
@@ -42,10 +43,14 @@ export class LoginComponent {
     this.formData.location = this.myForm.value.location;
     this.formData.gender = this.myForm.value.gender;
 
+    console.log("api",this.formData);// data is correctly coming from the form.
+
     // Call the FormService to submit the form
     this.formService.submitForm(this.formData).subscribe(
+      
       (response: FormSubmitResponse) => {
         // Handle the successful form submission
+        console.log('Form submitted', response);
         console.log('Form submitted successfully:', response.message);
         this.submitted = true;
       },

@@ -14,5 +14,5 @@ export class FormService {
 
   submitForm(formData: any): Observable<FormSubmitResponse> {
     return this.http.post<FormSubmitResponse>(this.apiUrl, formData);
-  }
+  }  
 }
